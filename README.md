@@ -1,20 +1,52 @@
-# Introduction
+# Blockchain Key Management Position Statement
 
-The proliferation of cryptographic protocols such as Transport Layer Security \(TLS\) transformed the concept of security on internet from a luxury affored by few into a commodity. With TLS, an average internet user is able to exchange encrypted messages online, use credit cards online, or download files; all without the fear of censorship or compromising his or her computer system.
+## About Us
 
-However, TLS's usefulness is limited outside the boundaries of simple but familiar server-client architectures.
+Blocko is a startup providing a bitcoin-based enterprise blockchain development platform. Our customers include JB Bank of Korea, one of the first banks in the world to provide blockchain-based authentication system to their customers. They are utilizing Open Keychain, an open standard promoted by Blocko to build PKIs on bitcoin blockchain fabric. Problem Statement
 
-With SSL certificates, it is possible to protect users by providing identities to service providers and ways for users to authenticate them. However, as more and more devices and services are going online. authenticating only service providers is simply not enough; the days of only servers with identities are over, as every user, every device needs a certificate of its own.
+A secure blockchain application requires secure ways to manage user private keys. For fixed use cases such as Bitcoin or Ethereum asset transfer, users can utilize existing wallet software to manage their assets. However, for more general use cases for web applications utilizing blockchain, things get complicated.
 
-We need identities for not only social network services, but digital door locks, refrigerators, and automobiles. We also need new ways for devices and services to identify and authenticate each other without human interactions.
+The existing solution is to build propriety private key management apps for different blockchain services.
 
-Simply put, existing Public Key Infrastructure \(PKI\) for providing identities to web services is not good enough. Even Google is developing new technologies such as Certificate Transparency to supplement the shortcomings of the PKI technologies.
+However, since each key management app requires different authentication scheme, despite the fact that many blockchain applications are able to utilize the same private key format, the approach results in fragmented experience for users and raised investment in time and resources for the service providers.
 
-Most of limitations of PKI systems come from the centralized nature of PKI providers, and distributed ledger technologies such as blockchain are expected to play a huge role in supplementing and replacing the limited PKI systems.
+The lack of standard mechanisms to manage user private keys is one of the major hindrance to the widespread adoption of blockchain.
 
-Blocko's OpenKeyChain is intended to be a robust real life implementation of such a PKI system based on blockchain technology
+## Requirements
 
-OpenKeyChain enables developers and users to deploy new PKIs without huge investments by leveraging the existing public blockchain infrastructure; anyone can register and manage certificates for devices and services, and sign or encrypt messages between parties even without TLS involved.
+### Consolidated Key Management
 
-OpenKeyChain is an open standard allowing others to review and extend its ideas. Blocko's Coinstack SDKs include reference implementations of OpenKeyChain; applications on all platforms \(servers, clients, and web browers\) are supported.
+Different blockchain applications should be able to utilize centralized key management functionality on each device, instead of implementing different key management features embedded to each application.
+
+### Access to Biometric Sensors
+
+For ease of use, users should be able to safely guard their private keys using biometric sensors such as fingerprint scanner or iris scanner.
+
+### Access to Native Security Features
+
+Private keys should be encrypted and stored safely utilizing different mechanisms present in devices.
+
+### Integration with Web Applications
+
+The key management scheme should provide integration schemes on different environments such as custom URL on iOS or intent on android.
+
+## Blockchain Authenticators
+
+FIDO UAF, an already established and popularized authentication scheme \([https://www.w3.org/Submission/2015/SUBM-fido-web-api-20151120](https://www.w3.org/Submission/2015/SUBM-fido-web-api-20151120)\) utilizes public key cryptography and require users to manage private keys on user devices, much like blockchain applications.
+
+FIDO UAF authenticators provide an excellent design to create, register, use, and manage user private keys under PKI systems \([https://fidoalliance.org/specs/fido-uaf-v1.0-ps-20141208/fido-uaf-authnr-cmds-v1.0-ps-20141208.html](https://fidoalliance.org/specs/fido-uaf-v1.0-ps-20141208/fido-uaf-authnr-cmds-v1.0-ps-20141208.html).\) Since FIDO UAF authenticators exist as separate native applications on mobile devices or as an embedded functionality provided by the OS, they provide access to integral native security features such as biometric sensors and secure elements.
+
+The same design can be applied to blockchain applications to build a safe standard to manage blockchain private keys and facilitate applications.
+
+Blockchain authenticators can provide such functionalities for blockchain web applications on mobile and desktop environment.
+
+Unlike FIDO authenticators built for the sole purpose of challenge-response authentication, blockchain authenticators should be able to provide a much richer mode of operations by signing multitude of transactions generated by web applications.
+
+## Issues
+
+### Key Recovery
+
+Since blockchain private keys provide not only ways for users to authenticate themselves, but manage important assets tied to the public key, there should be ways for users to backup and restore those as well.
+
+Standard procedures to safely provision user identities for security and recovery must be established and existing bitcoin technologies such as BIP39 could be a good starting point \([https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki).\)
 
