@@ -1,7 +1,8 @@
 {
     "pdf": {
-        "fontSize": 10,
+        "fontSize": 11,
         "paperSize": "a4",
+        "fontFamily": "NanumGothic",
         "chapterMark": "both",  
         "margin": {
         	"right": 42,
