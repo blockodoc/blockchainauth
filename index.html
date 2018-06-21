@@ -1,0 +1,243 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Blockchain Key Management Position Statement · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Blockchain Key Management Position Statement
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Blockchain Key Management Position Statement</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="blockchain-key-management-position-statement">Blockchain Key Management Position Statement</h1>
+<h2 id="about-us">About Us</h2>
+<p>Blocko is a startup providing a bitcoin-based enterprise blockchain development platform. Our customers include JB Bank of Korea, one of the first banks in the world to provide blockchain-based authentication system to their customers. They are utilizing Open Keychain, an open standard promoted by Blocko to build PKIs on bitcoin blockchain fabric. Problem Statement</p>
+<p>A secure blockchain application requires secure ways to manage user private keys. For fixed use cases such as Bitcoin or Ethereum asset transfer, users can utilize existing wallet software to manage their assets. However, for more general use cases for web applications utilizing blockchain, things get complicated.</p>
+<p>The existing solution is to build propriety private key management apps for different blockchain services.</p>
+<p>However, since each key management app requires different authentication scheme, despite the fact that many blockchain applications are able to utilize the same private key format, the approach results in fragmented experience for users and raised investment in time and resources for the service providers.</p>
+<p>The lack of standard mechanisms to manage user private keys is one of the major hindrance to the widespread adoption of blockchain.</p>
+<h2 id="requirements">Requirements</h2>
+<h3 id="consolidated-key-management">Consolidated Key Management</h3>
+<p>Different blockchain applications should be able to utilize centralized key management functionality on each device, instead of implementing different key management features embedded to each application.</p>
+<h3 id="access-to-biometric-sensors">Access to Biometric Sensors</h3>
+<p>For ease of use, users should be able to safely guard their private keys using biometric sensors such as fingerprint scanner or iris scanner.</p>
+<h3 id="access-to-native-security-features">Access to Native Security Features</h3>
+<p>Private keys should be encrypted and stored safely utilizing different mechanisms present in devices.</p>
+<h3 id="integration-with-web-applications">Integration with Web Applications</h3>
+<p>The key management scheme should provide integration schemes on different environments such as custom URL on iOS or intent on android.</p>
+<h2 id="blockchain-authenticators">Blockchain Authenticators</h2>
+<p>FIDO UAF, an already established and popularized authentication scheme (<a href="https://www.w3.org/Submission/2015/SUBM-fido-web-api-20151120" target="_blank">https://www.w3.org/Submission/2015/SUBM-fido-web-api-20151120</a>) utilizes public key cryptography and require users to manage private keys on user devices, much like blockchain applications.</p>
+<p>FIDO UAF authenticators provide an excellent design to create, register, use, and manage user private keys under PKI systems (<a href="https://fidoalliance.org/specs/fido-uaf-v1.0-ps-20141208/fido-uaf-authnr-cmds-v1.0-ps-20141208.html" target="_blank">https://fidoalliance.org/specs/fido-uaf-v1.0-ps-20141208/fido-uaf-authnr-cmds-v1.0-ps-20141208.html</a>.) Since FIDO UAF authenticators exist as separate native applications on mobile devices or as an embedded functionality provided by the OS, they provide access to integral native security features such as biometric sensors and secure elements.</p>
+<p>The same design can be applied to blockchain applications to build a safe standard to manage blockchain private keys and facilitate applications.</p>
+<p>Blockchain authenticators can provide such functionalities for blockchain web applications on mobile and desktop environment.</p>
+<p>Unlike FIDO authenticators built for the sole purpose of challenge-response authentication, blockchain authenticators should be able to provide a much richer mode of operations by signing multitude of transactions generated by web applications.</p>
+<h2 id="issues">Issues</h2>
+<h3 id="key-recovery">Key Recovery</h3>
+<p>Since blockchain private keys provide not only ways for users to authenticate themselves, but manage important assets tied to the public key, there should be ways for users to backup and restore those as well.</p>
+<p>Standard procedures to safely provision user identities for security and recovery must be established and existing bitcoin technologies such as BIP39 could be a good starting point (<a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki</a>.)</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Blockchain Key Management Position Statement","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"NanumGothic","paperSize":"a4","chapterMark":"both","pageBreaksBefore":"/","margin":{"right":42,"left":42,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-06-21T04:47:20.123Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-21T04:48:28.903Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
