@@ -2,7 +2,9 @@
 
 ## About Us
 
-Blocko is a startup providing a bitcoin-based enterprise blockchain development platform. Our customers include JB Bank of Korea, one of the first banks in the world to provide blockchain-based authentication system to their customers. They are utilizing Open Keychain, an open standard promoted by Blocko to build PKIs on bitcoin blockchain fabric. Problem Statement
+Blocko is a startup providing a bitcoin-based enterprise blockchain development platform. Our customers include JB Bank of Korea, one of the first banks in the world to provide blockchain-based authentication system to their customers. They are utilizing Open Keychain, an open standard promoted by Blocko to build PKIs on bitcoin blockchain fabric. 
+
+## Problem Statement
 
 A secure blockchain application requires secure ways to manage user private keys. For fixed use cases such as Bitcoin or Ethereum asset transfer, users can utilize existing wallet software to manage their assets. However, for more general use cases for web applications utilizing blockchain, things get complicated.
 
